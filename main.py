@@ -1,12 +1,11 @@
-import os
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 from aiogram.dispatcher import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 
-# .env yoki Render token
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+# 🔐 Tokenni shu yerga to‘g‘ridan-to‘g‘ri yozamiz
+BOT_TOKEN = "8120595784:AAFbNco72kQ2GYjOvgsvyGYEBxWMKJoWc60"
 
 bot = Bot(token=BOT_TOKEN)
 storage = MemoryStorage()
@@ -73,6 +72,6 @@ async def process_weight(message: types.Message, state: FSMContext):
     await message.answer(natija)
     await state.finish()
 
-# Ishga tushirish
+# Botni ishga tushirish
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
